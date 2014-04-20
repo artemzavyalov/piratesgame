@@ -1,1 +1,1 @@
-<?php `git pull`; ?>
+<?php `cd /home/dgame/html/ & git reset --hard HEAD & git pull origin master /home/dgame/html`; ?>
