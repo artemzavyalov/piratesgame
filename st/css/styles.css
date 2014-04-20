@@ -1,0 +1,344 @@
+/*--------------JQuery UI FIX--------------------------*/
+.ui-dialog {
+    padding: 0 !important;
+}
+.ui-widget-header {
+    border: 0 !important;
+}
+.ui-widget-header.ui-corner-all {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.ui-dialog .ui-dialog-buttonpane {
+    padding: 0 !important;
+}
+/*-----------------------------------------------------*/
+@keyframes card-rotate-180{
+        from { transform: rotateX(0) scaleX(1); }
+        50% { transform: rotateX(90deg) scaleX(1.1); }
+        to { transform: rotateX(180deg) scaleX(1);}
+    }
+@-moz-keyframes card-rotate-180{
+        from {-moz-transform: rotateX(0) scaleX(1);}
+        50% {-moz-transform: rotateX(90deg) scaleX(1.1); }
+        to {-moz-transform: rotateX(180deg) scaleX(1);}
+    }
+@-webkit-keyframes card-rotate-180{
+        from {-webkit-transform: rotateX(0) scaleX(1);}
+        50% {-webkit-transform: rotateX(90deg) scaleX(1.1); }
+        to {-webkit-transform: rotateX(180deg) scaleX(1);}
+    }
+@-o-keyframes card-rotate-180{
+        from {-o-transform: rotateX(0) scaleX(1);}
+        50% {-o-transform: rotateX(90deg) scaleX(1.1); }
+        to {-o-transform: rotateX(180deg) scaleX(1);}
+    }
+@-ms-keyframes card-rotate-180{
+        from {-ms-transform: rotateX(0) scaleX(1);}
+        50% {-ms-transform: rotateX(90deg) scaleX(1.1); }
+        to {-ms-transform: rotateX(180deg) scaleX(1);}
+    }
+
+/*-----------------------------------------------------*/
+@keyframes card-rotate-360{
+        from { transform: rotateX(180deg) scaleX(1); }
+        50% { transform: rotateX(270deg) scaleX(1.1); }
+        to { transform: rotateX(360deg) scaleX(1);}
+    }
+@-moz-keyframes card-rotate-360{
+        from {-moz-transform: rotateX(180deg) scaleX(1);}
+        50% {-moz-transform: rotateX(270deg) scaleX(1.1); }
+        to {-moz-transform: rotateX(360deg) scaleX(1);}
+    }
+@-webkit-keyframes card-rotate-360{
+        from {-webkit-transform: rotateX(180deg) scaleX(1);}
+        50% {-webkit-transform: rotateX(270deg) scaleX(1.1); }
+        to {-webkit-transform: rotateX(360deg) scaleX(1);}
+    }
+@-o-keyframes card-rotate-360{
+        from {-o-transform: rotateX(180deg) scaleX(1);}
+        50% {-o-transform: rotateX(270deg) scaleX(1.1); }
+        to {-o-transform: rotateX(360deg) scaleX(1);}
+    }
+@-ms-keyframes card-rotate-360{
+        from {-ms-transform: rotateX(180deg) scaleX(1);}
+        50% {-ms-transform: rotateX(270deg) scaleX(1.1); }
+        to {-ms-transform: rotateX(360deg) scaleX(1);}
+    }
+.rot180 {
+    animation: card-rotate-180 1s infinite linear;
+    -moz-animation: card-rotate-180 1s infinite linear;
+    -webkit-animation: card-rotate-180 1s infinite linear;
+    -o-animation: card-rotate-180 1s infinite linear;
+    -ms-animation: card-rotate-180 1s infinite linear;
+}
+.rot360 {
+    animation: card-rotate-360 1s infinite linear;
+    -moz-animation: card-rotate-360 1s infinite linear;
+    -webkit-animation: card-rotate-360 1s infinite linear;
+    -o-animation: card-rotate-360 1s infinite linear;
+    -ms-animation: card-rotate-360 1s infinite linear;
+}
+.defaultRotate90 {
+    transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+.defaultRotate180 {
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+.defaultRotate270 {
+    transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+}
+.card {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+.label {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+}
+.label.gold {
+    background-image: url('/st/img/money.png');
+    margin-left: 80px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    line-height: 38px;
+}
+.back {
+    z-index: 3;
+    background-image: url('/st/img/back.jpg');
+}
+.card1 {
+    z-index: 3;
+    background-image: url('/st/img/card1.jpg');
+}
+.card2 {
+    background-image: url('/st/img/card2.jpg');
+}
+body {
+    margin: 0;
+    background-color: white;
+}
+.hidden-layer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 150%;
+    height: 150%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 200000;
+}
+#container {
+    margin: 0;
+    background-color: white;
+    overflow: auto;
+}
+#game {
+    position: absolute;
+    margin: 0;
+}
+#blockDisplay {
+    position: absolute;
+    display: none;
+    z-index: 99;
+}
+#statusBar {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 115px;
+    z-index: 100;
+    background-color: black;
+}
+#statusBar .info {
+    height: 100%;
+    color: white;
+    overflow: hidden;
+}
+#statusBar .showhide {
+    margin: 0 auto;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    cursor: pointer;
+}
+#statusBar .showhide .arrows {
+    position: absolute;
+    margin-left: 6px;
+    margin-top: 3px;
+}
+#statusBar .showhide .arrows.show {
+    margin-top: 0px;
+}
+#statusBar .showhide .arrows .arrow{
+    margin: 0 auto;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+#statusBar .showhide .arrows.show .arrow{
+    transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+}
+#controlBar {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+}
+#controlBar .finishStep {
+    width: 50px;
+    height: 50px;
+    background-image: url('/st/img/finish-step.png');
+}
+#map {
+    margin-top: 120px;
+    margin-left: 120px;
+}
+#map .mapField {
+    position: relative;
+}
+.sea {
+    background-image: url('/st/img/sea.jpg');
+}
+.ship {
+    background-image: url('/st/img/ship.png');
+    z-index: 10;
+}
+#friendsBlock .friend {
+    display: inline-block;
+    border: 1px solid #00c200;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    width: 100px;
+    height: 130px;
+    padding: 5px;
+    margin: 5px;
+}
+#friendsBlock .friend[data-checked] {
+    background-color: #00c200;
+}
+#friendsBlock .friend .name {
+    font-size: 12px;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100px;
+}
+.cMenu {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    z-index: 30;
+}
+.cMenu .cElem {
+    position: absolute;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 21px;
+    -webkit-border-radius: 21px;
+    -moz-border-radius: 21px;
+    -o-border-radius: 21px;
+    -khtml-border-radius: 21px;
+}
+.piratesImg {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+.piratesCap {
+    float: left;
+    margin-left: 110px;
+    margin-top: -105px;
+}
+.piratesDesc {
+    float: right;
+    width: 84%;
+}
+.piratesDesc p {
+    margin-top: 5px;
+}
+.unchange {
+    float: right;
+    margin-top: 64px;
+    margin-right: 1px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.unchange p{
+    margin: 0;
+    line-height: 28px;
+    font-weight: bold;
+    font-size: 49px;
+    color: white;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+.piratesDesc .piratesProp {
+    float: right;
+    margin-right: 1px;
+    color: #3ac939;
+    height: 20px;
+}
+.pirateUnit {
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    background-image: url('/st/img/sprite-pirate.png');
+    background-position-x: 0px;
+    background-position-y: 0px;
+    z-index: 20;
+}
+.pirateUnit .pirateInner {
+    width: 70px;
+    height: 80px;
+    background-image: url('/st/img/sprite-pirate.png');
+}

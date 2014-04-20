@@ -1,0 +1,30 @@
+.progressCircle .progressElem {
+    position: absolute;
+    border-bottom: 20px solid black;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    height: 0;
+    width: 3px;
+}
+.progressCircle .progressElem.white {
+    border-bottom: 20px solid white;
+}
+.progressCircle .progressElem.complete {
+    border-bottom: 20px solid #ec87af !important;
+}
+.progressCircle .progressCount {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ebebeb;
+    text-shadow: #363535 3px 3px 5px;
+    margin-left: -8px;
+    margin-top: -15px;
+}
+.progressCircle .progressText {
+    width: 500px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 25px;
+}
