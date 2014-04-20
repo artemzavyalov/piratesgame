@@ -12,8 +12,9 @@ namespace go\DB\Exceptions;
 
 final class ConfigConnect extends Config
 {
-    public function __construct($message = null) {
-        $message = 'Error connect config'.($message ? (': "'.$message.'"') : '');
-        parent::__construct($message, 0);
-    }
+  public function __construct($message = null)
+  {
+    $message = 'Error connect config' . ($message ? (': "' . $message . '"') : '');
+    parent::__construct($message, 0);
+  }
 }

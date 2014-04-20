@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class MixedPlaceholder extends Placeholder
 {
-    protected $MESSAGE_PATTERN = 'Mixed placeholder "{{ placeholder }}"';
+  protected $MESSAGE_PATTERN = 'Mixed placeholder "{{ placeholder }}"';
 }

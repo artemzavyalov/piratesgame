@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class UnknownPlaceholder extends Placeholder
 {
-    protected $MESSAGE_PATTERN = 'Unknown placeholder "{{ placeholder }}"';
+  protected $MESSAGE_PATTERN = 'Unknown placeholder "{{ placeholder }}"';
 }

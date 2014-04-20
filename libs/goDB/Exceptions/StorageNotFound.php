@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class StorageNotFound extends Storage
 {
-    protected $MESSAGE_PATTERN = 'DB with name "{{ dbname }}" not found in Storage';
+  protected $MESSAGE_PATTERN = 'DB with name "{{ dbname }}" not found in Storage';
 }

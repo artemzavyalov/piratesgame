@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class UnknownFetch extends Fetch
 {
-    protected $MESSAGE_PATTERN = 'Unknown fetch format "{{ fetch }}"';
+  protected $MESSAGE_PATTERN = 'Unknown fetch format "{{ fetch }}"';
 }

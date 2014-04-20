@@ -11,12 +11,13 @@ namespace go\DB\Helpers\Iterators;
 
 final class numerics extends Base
 {
-    /**
-     * @override Base
-     *
-     * @return mixed | false
-     */
-    public function fetchNextRow() {
-        return $this->implementation->fetchRow($this->connection, $this->cursor);
-    }
+  /**
+   * @override Base
+   *
+   * @return mixed | false
+   */
+  public function fetchNextRow()
+  {
+    return $this->implementation->fetchRow($this->connection, $this->cursor);
+  }
 }

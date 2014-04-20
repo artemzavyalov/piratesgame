@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class StorageEngaged extends Storage
 {
-    protected $MESSAGE_PATTERN = 'Name "{{ dbname }}" already engaged in Storage';
+  protected $MESSAGE_PATTERN = 'Name "{{ dbname }}" already engaged in Storage';
 }

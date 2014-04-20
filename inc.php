@@ -25,52 +25,36 @@ require_once ROOT_DIR . '/functions/players.php';
 require_once ROOT_DIR . '/functions/map.php';
 
 // Configs
-$dbConfig = array();
-if($_SERVER['HTTP_HOST'] == 'dgame') {
-    $dbConfig['host']     = '127.0.0.1';
-    $dbConfig['username'] = 'root';
-    $dbConfig['password'] = ',jknnt,t';
-    $dbConfig['dbname']   = 'dgame';
-    $dbConfig['charset']  = 'utf8';
+include "db_config.php";
 
-}
-if($_SERVER['HTTP_HOST'] == 'dgame.zavart.ru') {
-    $dbConfig['host']     = '127.0.0.1';
-    $dbConfig['username'] = 'root';
-    $dbConfig['password'] = '6b78ev568bn';
-    $dbConfig['dbname']   = 'dgame';
-    $dbConfig['charset']  = 'utf8';
-
-}
-
-$dbRead   = go\DB\DB::create($dbConfig, 'mysql');
-$dbWrite  = go\DB\DB::create($dbConfig, 'mysql', TRUE);
+$dbRead = go\DB\DB::create($dbConfig, 'mysql');
+$dbWrite = go\DB\DB::create($dbConfig, 'mysql', TRUE);
 
 $memcache = new Memcache;
 $memcache->connect('127.0.0.1', 11211);
 
 $config = array();
 $config['game'] = array(
-    'COUNT_PIRATES' => 3
+  'COUNT_PIRATES' => 3
 );
 $config['buildMap'] = array(
-    'sizes' => array(
-        'vertical' => 10,
-        'horizontal' => 10,
-    ),
-    'counts' => array(
-        'DIE' => 2,
-        'ALLY' => 2,
-        'HELPER' => 2,
-        'TRANSPORTER' => 2,
-        'COSTLY' => 3,
-    ),
-    'percents' => array(
-        'GOLD' => 10,
-        'EMPTY' => 5,
-        'DANGER' => 20,
-        'COMPLEXITY' => 30,
-        'FEATURE' => 30,
-        'TRANSPORTER' => 5,
-    ),
+  'sizes' => array(
+    'vertical' => 10,
+    'horizontal' => 10,
+  ),
+  'counts' => array(
+    'DIE' => 2,
+    'ALLY' => 2,
+    'HELPER' => 2,
+    'TRANSPORTER' => 2,
+    'COSTLY' => 3,
+  ),
+  'percents' => array(
+    'GOLD' => 10,
+    'EMPTY' => 5,
+    'DANGER' => 20,
+    'COMPLEXITY' => 30,
+    'FEATURE' => 30,
+    'TRANSPORTER' => 5,
+  ),
 );

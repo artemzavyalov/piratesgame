@@ -1,5 +1,5 @@
 <?php
-$screenSize    = isset($_REQUEST['screenSize']) ? $_REQUEST['screenSize'] : FALSE;
+$screenSize = isset($_REQUEST['screenSize']) ? $_REQUEST['screenSize'] : FALSE;
 
 $userId = $curUser['user_id'];
 $answer = array();

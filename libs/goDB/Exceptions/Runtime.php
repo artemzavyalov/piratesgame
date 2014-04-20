@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 abstract class Runtime extends \RuntimeException implements Exception
 {
-    
+
 }

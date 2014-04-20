@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class StorageAssoc extends Storage
 {
-    protected $MESSAGE_PATTERN = 'Association error: "{{ dbname }}" not found in params';
+  protected $MESSAGE_PATTERN = 'Association error: "{{ dbname }}" not found in params';
 }

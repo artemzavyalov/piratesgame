@@ -10,8 +10,8 @@
  */
 
 return array(
-    'adapter' => null,
-    'lazy'    => true,
-    'prefix'  => '',
-    'debug'   => null,
+  'adapter' => null,
+  'lazy' => true,
+  'prefix' => '',
+  'debug' => null,
 );

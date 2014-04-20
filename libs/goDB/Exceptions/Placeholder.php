@@ -12,37 +12,39 @@ namespace go\DB\Exceptions;
 
 abstract class Placeholder extends Templater
 {
-    /**
-     * Шаблон сообщения, переопределяется у потомков
-     *
-     * @var string
-     */
-    protected $MESSAGE_PATTERN;
+  /**
+   * Шаблон сообщения, переопределяется у потомков
+   *
+   * @var string
+   */
+  protected $MESSAGE_PATTERN;
 
-    /**
-     * Конструктор
-     *
-     * @param string $placeholder
-     *        плейсхолдер на котором случилась ошибка
-     */
-    public function __construct($placeholder) {
-        $message = str_replace(
-            '{{ placeholder }}',
-            $placeholder,
-            $this->MESSAGE_PATTERN
-        );
-        $this->placeholder = $placeholder;
-        parent::__construct($message);
-    }
+  /**
+   * Конструктор
+   *
+   * @param string $placeholder
+   *        плейсхолдер на котором случилась ошибка
+   */
+  public function __construct($placeholder)
+  {
+    $message = str_replace(
+      '{{ placeholder }}',
+      $placeholder,
+      $this->MESSAGE_PATTERN
+    );
+    $this->placeholder = $placeholder;
+    parent::__construct($message);
+  }
 
-    /**
-     * Получить ошибочный плейсхолдер
-     *
-     * @return string
-     */
-    public function getPlaceholder() {
-        return $this->placeholder;
-    }
+  /**
+   * Получить ошибочный плейсхолдер
+   *
+   * @return string
+   */
+  public function getPlaceholder()
+  {
+    return $this->placeholder;
+  }
 
-    protected $placeholder;
+  protected $placeholder;
 }

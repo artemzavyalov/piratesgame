@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 interface Exception
 {
-    
+
 }

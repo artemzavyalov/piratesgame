@@ -11,13 +11,14 @@ namespace go\DB\Helpers\Iterators;
 
 final class assoc extends Base
 {
-    /**
-     * @override Base
-     *
-     * @return mixed | false
-     */
-    public function fetchNextRow() {
-        return $this->implementation->fetchAssoc($this->connection, $this->cursor);
-    }
+  /**
+   * @override Base
+   *
+   * @return mixed | false
+   */
+  public function fetchNextRow()
+  {
+    return $this->implementation->fetchAssoc($this->connection, $this->cursor);
+  }
 
 }

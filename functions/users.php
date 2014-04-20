@@ -8,13 +8,15 @@
  * @return int
  *          ID пользователя
  **/
-function addUser($arr) {
-    global $dbWrite;
+function addUser($arr)
+{
+  global $dbWrite;
 
-    $sql = "INSERT INTO `users` SET ?set";
-    $userId  = $dbWrite->query($sql, array($arr), 'id');
-    return $userId;
+  $sql = "INSERT INTO `users` SET ?set";
+  $userId = $dbWrite->query($sql, array($arr), 'id');
+  return $userId;
 }
+
 /**
  * отредактировать профиль пользователя
  * @param $userId int
@@ -24,13 +26,15 @@ function addUser($arr) {
  *
  * @return boolean
  **/
-function editUser($userId, $arr) {
-    global $dbWrite;
+function editUser($userId, $arr)
+{
+  global $dbWrite;
 
-    $sql    = "UPDATE `users` SET ?set WHERE `user_id` = ?i LIMIT 1";
-    $result = $dbWrite->query($sql, array($arr, $userId), 'ar');
-    return $result;
+  $sql = "UPDATE `users` SET ?set WHERE `user_id` = ?i LIMIT 1";
+  $result = $dbWrite->query($sql, array($arr, $userId), 'ar');
+  return $result;
 }
+
 /**
  * получить данные о пользователе
  * @param $userId int
@@ -39,12 +43,13 @@ function editUser($userId, $arr) {
  * @return array
  *          массив с данными о пользователе
  **/
-function getUser($userId) {
-    global $dbRead;
+function getUser($userId)
+{
+  global $dbRead;
 
-    $sql    = "SELECT * FROM `users` WHERE `user_id` = ?i LIMIT 1";
-    $user = $dbRead->query($sql, array($userId), 'row');
-    return $user;
+  $sql = "SELECT * FROM `users` WHERE `user_id` = ?i LIMIT 1";
+  $user = $dbRead->query($sql, array($userId), 'row');
+  return $user;
 }
 
 /**
@@ -55,12 +60,13 @@ function getUser($userId) {
  *
  * @return bool
  */
-function addUserLink($authId, $authUid, $userId) {
-    global $dbWrite;
+function addUserLink($authId, $authUid, $userId)
+{
+  global $dbWrite;
 
-    $sql    = "INSERT INTO `user_links` (link_authId, link_authUid, link_userId) VALUE(?i, ?string, ?i)";
-    $result = $dbWrite->query($sql, array($authId, $authUid, $userId), 'ar');
-    return $result;
+  $sql = "INSERT INTO `user_links` (link_authId, link_authUid, link_userId) VALUE(?i, ?string, ?i)";
+  $result = $dbWrite->query($sql, array($authId, $authUid, $userId), 'ar');
+  return $result;
 }
 
 /**
@@ -72,13 +78,14 @@ function addUserLink($authId, $authUid, $userId) {
  *
  * @return bool
  */
-function removeUserLink($authId, $authUid) {
-    global $dbWrite;
+function removeUserLink($authId, $authUid)
+{
+  global $dbWrite;
 
-    $sql    = "DELETE FROM `user_links` WHERE `link_authId`=?i AND `link_authUid`=?i";
-    $data   = array($authId, $authUid);
-    $result = $dbWrite->query($sql, $data, 'ar');
-    return $result;
+  $sql = "DELETE FROM `user_links` WHERE `link_authId`=?i AND `link_authUid`=?i";
+  $data = array($authId, $authUid);
+  $result = $dbWrite->query($sql, $data, 'ar');
+  return $result;
 }
 
 /**
@@ -90,12 +97,13 @@ function removeUserLink($authId, $authUid) {
  *
  * @return int
  */
-function checkUserLink($authId, $authUid) {
-    global $dbRead;
+function checkUserLink($authId, $authUid)
+{
+  global $dbRead;
 
-    $sql    = "SELECT `link_userId` FROM `user_links` WHERE `link_authId` = ?i AND `link_authUid` = ?string LIMIT 1";
-    $result = $dbRead->query($sql, array($authId, $authUid), 'el');
-    return $result;
+  $sql = "SELECT `link_userId` FROM `user_links` WHERE `link_authId` = ?i AND `link_authUid` = ?string LIMIT 1";
+  $result = $dbRead->query($sql, array($authId, $authUid), 'el');
+  return $result;
 }
 
 /**
@@ -109,14 +117,15 @@ function checkUserLink($authId, $authUid) {
  *
  * @return boolean
  */
-function updateUserLink($authId, $authUid, $newUserId) {
-    global $dbWrite;
+function updateUserLink($authId, $authUid, $newUserId)
+{
+  global $dbWrite;
 
 
-    $sql    = "UPDATE `user_links` SET `link_userId`=?i WHERE `link_authId`=?i AND `link_authUid`=?string";
-    $data   = array($newUserId, $authId, $authUid);
-    $result = $dbWrite->query($sql, $data, 'ar');
-    return $result;
+  $sql = "UPDATE `user_links` SET `link_userId`=?i WHERE `link_authId`=?i AND `link_authUid`=?string";
+  $data = array($newUserId, $authId, $authUid);
+  $result = $dbWrite->query($sql, $data, 'ar');
+  return $result;
 }
 
 /**
@@ -125,12 +134,13 @@ function updateUserLink($authId, $authUid, $newUserId) {
  * @param int $userId идентификатор пользователя
  * @return int идентификатор пользователя в соцсети
  */
-function getUserAuthUidLink($authId, $userId) {
-    global $dbRead;
+function getUserAuthUidLink($authId, $userId)
+{
+  global $dbRead;
 
-    $sql    = "SELECT `link_authUid` FROM `user_links` WHERE `link_authId` = ?i AND `link_userId` = ?i LIMIT 1";
-    $result = $dbRead->query($sql, array($authId, $userId))->el();
-    return $result;
+  $sql = "SELECT `link_authUid` FROM `user_links` WHERE `link_authId` = ?i AND `link_userId` = ?i LIMIT 1";
+  $result = $dbRead->query($sql, array($authId, $userId))->el();
+  return $result;
 }
 
 /**
@@ -143,13 +153,14 @@ function getUserAuthUidLink($authId, $userId) {
  *                  ID соц. сети
  * @return array
  */
-function getFriends($userId, $uids, $authId) {
-    global $dbRead;
+function getFriends($userId, $uids, $authId)
+{
+  global $dbRead;
 
-    $sql = 'SELECT `users`.*, `link_authUid` as `user_uid`
+  $sql = 'SELECT `users`.*, `link_authUid` as `user_uid`
             FROM `users`
                 INNER JOIN `user_links` ON `link_userId`=`user_id` AND `link_authId`=?i
             WHERE `link_authUid` IN (?list)';
-    $result = $dbRead->query($sql, array($authId, $userId, $uids))->assoc();
-    return $result;
+  $result = $dbRead->query($sql, array($authId, $userId, $uids))->assoc();
+  return $result;
 }

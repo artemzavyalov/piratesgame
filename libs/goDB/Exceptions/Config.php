@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 abstract class Config extends Logic
 {
-    
+
 }

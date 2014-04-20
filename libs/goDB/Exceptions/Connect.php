@@ -12,15 +12,16 @@ namespace go\DB\Exceptions;
 
 final class Connect extends Runtime
 {
-    /**
-     * Конструктор
-     *
-     * @param string $error
-     *        описание ошибки
-     * @param string $errorcode [optional]
-     *        код ошибки
-     */
-    public function __construct($error, $errorcode = null) {
-        parent::__construct($error, $errorcode);
-    }
+  /**
+   * Конструктор
+   *
+   * @param string $error
+   *        описание ошибки
+   * @param string $errorcode [optional]
+   *        код ошибки
+   */
+  public function __construct($error, $errorcode = null)
+  {
+    parent::__construct($error, $errorcode);
+  }
 }

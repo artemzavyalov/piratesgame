@@ -12,5 +12,5 @@ namespace go\DB\Exceptions;
 
 final class StorageDBCentral extends Storage
 {
-    protected $MESSAGE_PATTERN = 'Storage contains no central database';
+  protected $MESSAGE_PATTERN = 'Storage contains no central database';
 }

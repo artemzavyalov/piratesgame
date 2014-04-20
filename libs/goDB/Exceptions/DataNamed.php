@@ -12,8 +12,9 @@ namespace go\DB\Exceptions;
 
 final class DataNamed extends Data
 {
-    public function __construct($name) {
-        $message = 'Named data "'.$name.'" is not found';
-        parent::__construct($message);
-    }
+  public function __construct($name)
+  {
+    $message = 'Named data "' . $name . '" is not found';
+    parent::__construct($message);
+  }
 }

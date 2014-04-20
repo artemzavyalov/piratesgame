@@ -1,6 +1,6 @@
 <?php
 
-if(empty($curUser)) die('NOT AUTH');
+if (empty($curUser)) die('NOT AUTH');
 
 $userId = $curUser['user_id'];
 
